@@ -4,9 +4,9 @@ Installation Guide (Ubuntu): https://www.vultr.com/docs/install-mosquitto-mqtt-b
 
 Subscribe & Publisher Command With Authentication:
 ```bash
-mosquitto_sub -u vishwas_acharya -P MY_PASSWORD -t “home/lights/sitting_room”
+mosquitto_sub -u YOUR_USERNAME -P YOUR_PASSWORD -t “home/lights/sitting_room”
 ```
 
 ```bash
-mosquitto_pub -u vishwas_acharya -P MY_PASSWORD -t “home/lights/sitting_room” -m “ON”
+mosquitto_pub -u YOUR_USERNAME -P YOUR_PASSWORD -t “home/lights/sitting_room” -m “ON”
 ```
