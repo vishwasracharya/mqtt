@@ -31,7 +31,7 @@
 
 ## Anonymous MQTT clients
 - If we require a temporary client to connect to the broker, we can use the anonymous MQTT client. MQTT broker will assign random client ID to the anonymous client.
-<img src="https://github.com/vishwasracharya/mqtt/blob/main/screenshots/mosquitto_implementation.png" width="120" alt="Anonymous MQTT clients" />
+<img src="https://github.com/vishwasracharya/mqtt/blob/main/screenshots/mosquitto_implementation.png" alt="Anonymous MQTT clients" />
 
 ## Immediate publishes
 - An abilty to send a messages without waiting for a CONNACK response from the broker.
