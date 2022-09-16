@@ -1,5 +1,5 @@
 ## Session present flag
-
+- This flag is used to determine whether the session flag is present or not. 
 ## Error codes on failed subscriptions
 
 | Error code (Decimal) | Error code (Hexadecimal) | Meaning                                                       |
@@ -30,7 +30,12 @@
 | 9                    | 0x9                      | Timeout waiting for CONNACK                                   |
 
 ## Anonymous MQTT clients
+- If we require a temporary client to connect to the broker, we can use the anonymous MQTT client. MQTT broker will assign random client ID to the anonymous client.
+<img src="https://github.com/vishwasracharya/mqtt/blob/main/screenshots/mosquitto_implementation.png" width="120" alt="Anonymous MQTT clients" />
 
 ## Immediate publishes
+- An abilty to send a messages without waiting for a CONNACK response from the broker.
+- This is better for the burst-mode clients. Those who only care about sending messages.
 
 ## No client identifier restrictions
+- Previously there was a limit for characters in the client identifier (23 char for CONNECT message). This has been removed in MQTT 3.1.1.
