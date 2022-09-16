@@ -1,19 +1,19 @@
-# python 3.6
-
 import random
 import time
 
 from paho.mqtt import client as mqtt_client
 
 
-broker = 'broker.emqx.io'
+broker = "broker.emqx.io"
 port = 1883
 topic = "python/mqtt"
 # generate client ID with pub prefix randomly
-client_id = f'python-mqtt-{random.randint(0, 1000)}'
-username = 'YOUR_USERNAME'
-password = 'YOUR_PASSWORD'
+client_id = f"python-mqtt-{random.randint(0, 1000)}"
+username = "YOUR_USERNAME"
+password = "YOUR_PASSWORD"
 
+# It creates a client object, sets the username and password, and connects to the broker.
+# :return: The client is being returned.
 def connect_mqtt():
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
@@ -28,6 +28,8 @@ def connect_mqtt():
     return client
 
 
+# `publish` is a function that publishes a message to a topic every second
+# :param client: the client object
 def publish(client):
     msg_count = 0
     while True:
@@ -43,11 +45,12 @@ def publish(client):
         msg_count += 1
 
 
+# `run()` connects to the MQTT broker, starts the loop, and publishes a message
 def run():
     client = connect_mqtt()
     client.loop_start()
     publish(client)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()

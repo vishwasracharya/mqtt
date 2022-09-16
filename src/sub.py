@@ -10,10 +10,12 @@ port = 1883
 topic = "python/mqtt"
 # generate client ID with pub prefix randomly
 client_id = f"python-mqtt-{random.randint(0, 100)}"
-username = 'YOUR_USERNAME'
-password = 'YOUR_PASSWORD'
+username = "YOUR_USERNAME"
+password = "YOUR_PASSWORD"
 
 
+# > The function `connect_mqtt()` connects to the MQTT broker and returns a client object
+# :return: A client object
 def connect_mqtt() -> mqtt_client:
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
@@ -28,6 +30,9 @@ def connect_mqtt() -> mqtt_client:
     return client
 
 
+# It subscribes to the `topic` and prints the message payload when it receives a message
+# :param client: the client instance for this callback
+# :type client: mqtt_client
 def subscribe(client: mqtt_client):
     def on_message(client, userdata, msg):
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
@@ -36,6 +41,8 @@ def subscribe(client: mqtt_client):
     client.on_message = on_message
 
 
+# `run()` connects to the MQTT broker, subscribes to the topic `/sensors/temperature`, and then loops
+# forever, waiting for messages.
 def run():
     client = connect_mqtt()
     subscribe(client)
