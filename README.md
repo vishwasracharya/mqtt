@@ -1,5 +1,5 @@
 # MQTT
-This repo contains all the code and learnings regarding MQTT.
+This repo contains all the code, Notes and learnings regarding MQTT.
 
 ### Connect with me
   <a href="https://twitter.com/vishwasracharya">
